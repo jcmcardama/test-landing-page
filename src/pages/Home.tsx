@@ -1,6 +1,10 @@
+import { Typography } from "@mui/material";
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <Typography variant="h1">
+      This is the Homepage
+    </Typography>
   );
 };
 
