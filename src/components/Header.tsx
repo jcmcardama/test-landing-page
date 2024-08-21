@@ -5,7 +5,8 @@ import Tab from '@mui/material/Tab';
 
 const StyledAppBar = styled(AppBar)((theme) => {
     return {
-        backgroundColor: theme.theme.palette.background.default
+        backgroundColor: theme.theme.palette.background.paper,
+        position: 'static'
     };
 });
 
@@ -26,7 +27,7 @@ const Header = () => {
             <Container>
                 <StyledToolbar>
                     <Button>
-                        <Avatar alt="carlo logo" src="src\assets\jcmc_logo-removebg-preview.png" />
+                        <Avatar alt="carlo logo" src="src\assets\my-logo.png" />
                     </Button>
                     <Box>
                         <Tabs
