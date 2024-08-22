@@ -3,9 +3,8 @@ import { AppBar, Avatar, Box, Button, Container, Toolbar, styled } from '@mui/ma
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
-const StyledAppBar = styled(AppBar)((theme) => {
+const StyledAppBar = styled(AppBar)(() => {
     return {
-        backgroundColor: theme.theme.palette.background.paper,
         position: 'static'
     };
 });
@@ -13,6 +12,14 @@ const StyledAppBar = styled(AppBar)((theme) => {
 const StyledToolbar = styled(Toolbar)(() => {
     return {
         justifyContent: 'space-between'
+    };
+});
+
+const StyledTabs = styled(Tabs)((theme) => {
+    return {
+        "& .MuiTabs-indicator": {
+            backgroundColor: theme.theme.palette.background.default
+        }
     };
 });
 
@@ -30,15 +37,16 @@ const Header = () => {
                         <Avatar alt="carlo logo" src="src\assets\my-logo.png" />
                     </Button>
                     <Box>
-                        <Tabs
+                        <StyledTabs
                             value={value}
                             onChange={handleChange}
+                            textColor="inherit"
                         >
                             <Tab label="About" value={1} />
                             <Tab label="Skills" value={2} />
                             <Tab label="Projects" value={3} />
                             <Tab label="Contact" value={4} />
-                        </Tabs>
+                        </StyledTabs>
                     </Box>
                 </StyledToolbar>
             </Container>
