@@ -1,5 +1,4 @@
 import { Typography } from "@mui/material";
-import { Outlet } from "react-router-dom";
 
 const Skills = () => {
   return (
@@ -7,7 +6,6 @@ const Skills = () => {
       <Typography variant="h1">
         This is the Skills
       </Typography>
-      <Outlet />
     </>
   );
 };

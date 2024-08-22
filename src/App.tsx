@@ -1,11 +1,12 @@
+import { Outlet, RouterProvider } from 'react-router-dom';
 import Header from './components/Header';
-import Home from './pages/Home';
+import router from './routes/Routes';
 
 function App() {
   return (
     <>
       <Header />
-      <Home />
+      <Outlet />
     </>
   )
 }

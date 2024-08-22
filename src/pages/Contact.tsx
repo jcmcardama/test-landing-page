@@ -1,5 +1,4 @@
 import { Typography } from "@mui/material";
-import { Outlet } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -7,7 +6,6 @@ const Contact = () => {
       <Typography variant="h1">
         This is the Contact
       </Typography>
-      <Outlet />
     </>
   );
 };
