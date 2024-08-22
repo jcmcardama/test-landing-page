@@ -1,9 +1,10 @@
-import { Container, styled, Typography } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 
-const StyledContainer = styled(Container)((theme) => {
+const StyledContainer = styled(Box)((theme) => {
     return {
         backgroundColor: theme.theme.palette.primary.main,
         padding: "20px 0",
+        color: theme.theme.palette.background.default
     };
 });
 
