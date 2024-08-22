@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Avatar, Box, Button, Container, Toolbar, styled } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import { Link } from 'react-router-dom';
 
 const StyledAppBar = styled(AppBar)(() => {
     return {
@@ -24,28 +25,28 @@ const StyledTabs = styled(Tabs)((theme) => {
 });
 
 const Header = () => {
-    const [value, setValue] = useState(1);
+    const [tabsValue, setTabsValue] = useState(0);
     const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
+        setTabsValue(newValue);
     };
 
     return (
         <StyledAppBar>
             <Container>
                 <StyledToolbar>
-                    <Button>
+                    <Button to={'/'} component={Link} >
                         <Avatar alt="carlo logo" src="src\assets\my-logo.png" />
                     </Button>
                     <Box>
                         <StyledTabs
-                            value={value}
+                            value={tabsValue}
                             onChange={handleChange}
                             textColor="inherit"
                         >
-                            <Tab label="About" value={1} />
-                            <Tab label="Skills" value={2} />
-                            <Tab label="Projects" value={3} />
-                            <Tab label="Contact" value={4} />
+                            <Tab label="About" value={1} to={'/about'} component={Link} />
+                            <Tab label="Skills" value={2} to={'/skills'} component={Link} />
+                            <Tab label="Projects" value={3} to={'/projects'} component={Link} />
+                            <Tab label="Contact" value={4} to={'/contact'} component={Link} />
                         </StyledTabs>
                     </Box>
                 </StyledToolbar>
