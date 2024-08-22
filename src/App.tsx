@@ -5,7 +5,7 @@ import { Grid, styled } from '@mui/material';
 
 const StyledGrid = styled(Grid)(() => {
     return {
-      height: 'calc(100% - 128px)'
+      height: 'calc(100% - 64px)'
     };
 });
 
