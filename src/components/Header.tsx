@@ -25,8 +25,8 @@ const StyledTabs = styled(Tabs)((theme) => {
 });
 
 const Header = () => {
-    const [tabsValue, setTabsValue] = useState(0);
-    const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+    const [tabsValue, setTabsValue] = useState('/');
+    const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
         setTabsValue(newValue);
     };
 
@@ -34,7 +34,13 @@ const Header = () => {
         <StyledAppBar>
             <Container>
                 <StyledToolbar>
-                    <Button to={'/'} component={Link} >
+                    <Button 
+                        to={'/'} 
+                        component={Link}
+                        onClick={() => {
+                            setTabsValue('/');
+                        }}
+                    >
                         <Avatar alt="carlo logo" src="src\assets\my-logo.png" />
                     </Button>
                     <Box>
@@ -43,10 +49,10 @@ const Header = () => {
                             onChange={handleChange}
                             textColor="inherit"
                         >
-                            <Tab label="About" value={1} to={'/about'} component={Link} />
-                            <Tab label="Skills" value={2} to={'/skills'} component={Link} />
-                            <Tab label="Projects" value={3} to={'/projects'} component={Link} />
-                            <Tab label="Contact" value={4} to={'/contact'} component={Link} />
+                            <Tab label="About" value={'/about'} to={'/about'} component={Link} />
+                            <Tab label="Skills" value={'/skills'} to={'/skills'} component={Link} />
+                            <Tab label="Projects" value={'/projects'} to={'/projects'} component={Link} />
+                            <Tab label="Contact" value={'/contact'} to={'/contact'} component={Link} />
                         </StyledTabs>
                     </Box>
                 </StyledToolbar>
